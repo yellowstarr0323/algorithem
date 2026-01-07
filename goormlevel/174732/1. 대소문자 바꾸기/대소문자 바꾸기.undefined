@@ -1,0 +1,26 @@
+import java.io.*;
+
+class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int len = Integer.parseInt(br.readLine()); // 문자열 길이
+
+        String string = br.readLine();
+        char[] str = string.toCharArray();
+
+        String result = ""; // 초기화 필수
+
+        for (int i = 0; i < len; i++) {
+            if (Character.isUpperCase(str[i])) {
+                result += Character.toLowerCase(str[i]);
+            } else if (Character.isLowerCase(str[i])) {
+                result += Character.toUpperCase(str[i]);
+            } else {
+                result += str[i]; // 숫자나 특수문자는 그대로
+            }
+        }
+
+        System.out.println(result);
+    }
+}
